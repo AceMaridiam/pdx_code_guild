@@ -35,6 +35,12 @@ catalog = {
         "move_type": "vault",
         "take_off": "right",
     },
+    "tack": {
+        "name": "tack",
+        "level": 1,
+        "move_type": "wall",
+        "take_off": "right",
+    },
     "dash_vault": {
         "name": "dash_vault",
         "level": 2,

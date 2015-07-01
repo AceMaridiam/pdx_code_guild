@@ -1,4 +1,4 @@
-from parkour_game_concept import catalog
+from parkour_modules import catalog
 import random
 import types
 
@@ -22,8 +22,13 @@ level_moves_list = []
 # store list of move names from level_moves_list
 level_moves_names = []
 
-# store list of move types from level_moves_list
-level_moves_types = []
+def get_level_moves_types(level_moves_list, move_type):
+    level_move_types = []
+    for level_move in level_moves_list:
+        if level_move["move_type"] == move_type:
+            level_move_types.append(level_move)
+
+    return level_move_types
 
 # loops through catalog to find moves based off user_level
 for move in catalog.itervalues():
@@ -33,43 +38,19 @@ for move in catalog.itervalues():
 for move_option in level_moves_list:
     level_moves_names.append(move_option['name'])
 
-for move_option in level_moves_list:
-    level_moves_types.append(move_option['move_type'])
-
-
-print ', '.join(level_moves_names)
-
-
 # takes in users obstacles
 user_input = raw_input("Create a list of obstacles.\n"
-                        "AKA:Vault, Rail, Platform, Jump, Wall\n"
-                       ">>  ").lower()
+                       "AKA:Vault, Rail, Platform, Jump, Wall\n"
+                       ">>  ").lower().split(', ')
 
-
-# takes user_input obstacles and adds items to a new list
-user_obstacle_list = []
-
-user_obstacle_list.append(user_input)
-
-
-# run generated from user_obstacle_list
+#
 generated_run = []
+for input in user_input:
+    moves_by_type = get_level_moves_types(level_moves_list, input)
+    random_move_name = random.choice(moves_by_type)['name']
+    generated_run.append("{} the {}".format(random_move_name, input))
 
-# grabs items based off user_obstacle_list and assigns each item a random move
-for obstacle in user_obstacle_list:
-    if obstacle == "rail":
-        generated_run.append("{} the {}".format(random.choice(level_moves_names), obstacle))
-    elif obstacle == "vault":
-        generated_run.append("{} the {}".format(random.choice(level_moves_names), obstacle))
-    elif obstacle == "jump":
-        generated_run.append("{} the {}".format(random.choice(level_moves_names), obstacle))
-    elif obstacle == "wall":
-        generated_run.append("{} the {}".format(random.choice(level_moves_names), obstacle))
-
-print level_moves_list
-print level_moves_names
-print level_moves_types
-# print ', '.join(generated_run)
+print ', '.join(generated_run)
 
 
 
