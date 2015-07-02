@@ -1,4 +1,5 @@
 catalog = {
+    # Level One
     "roll": {
         "name": "roll",
         "level": 1,
@@ -9,71 +10,90 @@ catalog = {
         "level": 1,
         "move_type": "ground",
     },
-    "safety_vault_right": {
-        "name": "safety_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "safety_vault_left": {
-        "name": "safety_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "left",
-    },
-    "speed_vault_right": {
-        "name": "speed_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "speed_vault_left": {
-        "name": "speed_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "lazy_vault_right": {
-        "name": "lazy_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "lazy_vault_left": {
-        "name": "lazy_vault",
-        "level": 1,
-        "move_type": "vault",
-        "take_off": "right",
-    },
     "tack": {
         "name": "tack",
         "level": 1,
         "move_type": "wall",
-        "take_off": "right",
     },
-     "wall_run": {
-        "name": "Wall run",
-        "level": 2,
-        "move_type": "wall",
-        "take_off": "right",
-    },
-    "cat_to_cat": {
-        "name": "Cat to Cat",
-        "level": 2,
+    "cat": {
+        "name": "cat",
+        "level": 1,
         "move_type": "wall",
     },
-    "pop_up": {
-        "name": "pop up",
+    "underbar": {
+        "name": "underbar",
+        "level": 1,
+        "move_type": "bar",
+    },
+    "bar_balance": {
+        "name": "bar_balance",
+        "level": 1,
+        "move_type": "bar",
+    },
+    "safety_vault": {
+        "name": "safety vault",
+        "level": 1,
+        "move_type": "vault",
+    },
+    "lazy_vault": {
+        "name": "lazy vault",
+        "level": 1,
+        "move_type": "vault",
+    },
+    # Level Two
+    "dive_roll": {
+        "name": "roll",
+        "level": 2,
+        "move_type": "ground",
+    },
+    "hand_walk": {
+        "name": "hand walk",
+        "level": 2,
+        "move_type": "ground",
+    },
+    "wall_run": {
+        "name": "wall run",
         "level": 2,
         "move_type": "wall",
+    },
+    "arm_up": {
+        "name": "arm up",
+        "level": 2,
+        "move_type": "wall",
+    },
+    "lache": {
+        "name": "lache",
+        "level": 2,
+        "move_type": "bar",
+    },
+    "muscle_up": {
+        "name": "muscle up",
+        "level": 2,
+        "move_type": "bar",
+    },
+    "kong_vault": {
+        "name": "kong vault",
+        "level": 2,
+        "move_type": "vault",
+    },
+    "dash_vault": {
+        "name": "dash vault",
+        "level": 2,
+        "move_type": "vault",
+    },
+    # Level Three
+    "front_flip": {
+        "name": "front_flip",
+        "level": 3,
+        "move_type": "ground",
+    },
+    "back_flip": {
+        "name": "back flip",
+        "level": 3,
+        "move_type": "ground",
     },
     "palm_flip": {
         "name": "palm flip",
-        "level": 3,
-        "move_type": "wall",
-    },
-    "palm_gainer": {
-        "name": "palm gainer",
         "level": 3,
         "move_type": "wall",
     },
@@ -82,88 +102,24 @@ catalog = {
         "level": 3,
         "move_type": "wall",
     },
-    "wall_flip": {
-        "name": "wall flip",
+    "bar_front_flip": {
+        "name": "front flip",
         "level": 3,
-        "move_type": "wall",
+        "move_type": "bar",
     },
-    "precision": {
-        "name": "precision",
-        "level": 1,
-        "move_type": "rail",
-        "take_off": "right",
-    },
-    "roll_right": {
-        "name": "roll right",
-        "level": 1,
-        "move_type": "platform",
-    },
-    "stride": {
-        "name": "stride",
-        "level": 1,
-        "move_type": "jump",
-    },
-    "jump": {
-        "name": "jump",
-        "level": 1,
-        "move_type": "jump",
-    },
-    "cat_leap": {
-        "name": "Cat leap",
-        "level": 1,
-        "move_type": "jump",
-    },
-    "dive_roll": {
-        "name": "dive roll",
-        "level": 1,
-        "move_type": "jump",
-    },
-    "dash_vault": {
-        "name": "dash_vault",
-        "level": 2,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "kong_vault": {
-        "name": "kong_vault",
-        "level": 2,
-        "move_type": "vault",
-    },
-    "side_vault": {
-        "name": "side_vault",
-        "level": 2,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "turn_vault": {
-        "name": "turn_vault",
-        "level": 2,
-        "move_type": "vault",
-        "take_off": "right",
-    },
-    "dash_vault": {
-        "name": "dash_vault",
+    "bar_back_flip": {
+        "name": "back flip",
         "level": 3,
-        "move_type": "vault",
-        "take_off": "right",
+        "move_type": "bar",
     },
-    "kong_vault": {
-        "name": "kong_vault",
+    "double_kong_vault": {
+        "name": "double kong vault",
         "level": 3,
         "move_type": "vault",
     },
-    "side_vault": {
-        "name": "side_vault",
+    "spin_vault": {
+        "name": "spin vault",
         "level": 3,
         "move_type": "vault",
-        "take_off": "right",
-    },
-    "turn_vault": {
-        "name": "turn_vault",
-        "level": 3,
-        "move_type": "vault",
-        "take_off": "right",
     }
 }
-
-
