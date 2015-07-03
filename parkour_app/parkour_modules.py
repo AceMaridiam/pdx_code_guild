@@ -7,6 +7,7 @@ __status__ = "Production"
 from parkour_run_db import runs
 from parkour_db import catalog
 import webbrowser
+import time
 
 
 class ParkourMove(object):
@@ -19,24 +20,29 @@ class ParkourMove(object):
 
 #main menu for game
 def main_menu():
-    user_choice = int(raw_input("""Welcome to the run generator for Parkour and Free Running.\n
-                            To start a run, type '1.\n
-                            What exactly is the difference between Parkour and Free Running? type 2 to get learned!\n"""))
+    user_choice = int(raw_input("Welcome to the run generator for Parkour and Free Running.\n\n"
+                                "\tTo start a run, type: 1\n\n"
+                                "\tWhat Parkour? and what is the difference between \n\tParkour and Free Running? \n\n\tto get learned! type: 2 >  "))
 
     if user_choice == 1:
-        make_run()
+        pass
     elif user_choice == 2:
-        webbrowser.open('http://iontams.com/2012/03/13/parkour-vs-free-running/')
-        make_run()
-
-
-def make_run():
-    user_name = raw_input("Enter a user name:  ")
-    user_level = raw_input("Beginner (B) | Intermediate (I) | Advanced (A)\n"
-                           "*****  What is your level?  ******\n"
-                           ">>  ").lower()
-
-    return user_name, user_level
+        print "\nMany people mistakenly think that Parkour and Free Running are the same thing. \n" \
+              "Parkour is an individual sport; by training Parkour you aim to gain a mind-body connection which you have never previously experienced. \n" \
+              "Free Running is the art of movement; adding personality and expression into what you do."
+        time.sleep(1)
+        answer = raw_input("Do you want to know more? (Y/N): ".lower())
+        if answer == 'yes' or answer == 'y':
+            print "You're browser is opening"
+            time.sleep(3)
+            webbrowser.open('http://iontams.com/2012/03/13/parkour-vs-free-running/')
+            time.sleep(3)
+            main_menu()
+        elif answer == 'no' or answer == 'n':
+            pass
+        else:
+            print "Not a valid answer!"
+        pass
 
 
 
@@ -49,16 +55,20 @@ def get_level_moves_types(level_moves_list, move_type):
 
     return level_move_types
 
-# saves users run to db
-def save_run():
-    user_save = raw_input("Would you like to save this run?  Yes or NO:  ").lower()
-    if user_save == "yes" or "y":
-        runs[user_name] = {'level': user_level, 'obstacles': user_obsticles_list, 'run': generated_run, 'location': []}
-        print "{}'s run data has been stored.".format(user_name)
-    else:
-        main_menu()
+
+def user_obsticles_list_checker():
+    user_obsticles_list = raw_input("Create a list of obstacles, seperated by comma.\n"
+                                "Obstacles: Vault, Bar, Wall, Ground\n"
+                                ">>  ").lower().split(', ')
+    for item in user_obsticles_list:
+        if item == "vault" or item == "bar" or item == "wall" or item == "ground":
+            return user_obsticles_list
+        else:
+            print "Not a valid answer!"
+            main_menu()
 
 
+# Choose user level one
 def get_moves_for_beginner_level():
     user_level_one = 1
     level_moves_list = []
@@ -67,6 +77,7 @@ def get_moves_for_beginner_level():
             level_moves_list.append(move)
     return level_moves_list
 
+# Choose user level two and one
 def get_moves_for_intermediate_level():
     user_level_one = 1
     user_level_two = 2
@@ -78,6 +89,7 @@ def get_moves_for_intermediate_level():
             level_moves_list.append(move)
     return level_moves_list
 
+# Choose user level three, two, and one
 def get_moves_for_advanced_level():
     user_level_one = 1
     user_level_two = 2
@@ -91,6 +103,7 @@ def get_moves_for_advanced_level():
         elif move['level'] == user_level_three:
             level_moves_list.append(move)
     return level_moves_list
+
 
 
 

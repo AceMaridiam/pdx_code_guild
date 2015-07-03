@@ -2,17 +2,19 @@ from parkour_modules import get_level_moves_types, main_menu, get_moves_for_adva
 from parkour_run_db import runs
 from parkour_db import catalog
 import random
+import time
 
 
 
 
-# main_menu()
+main_menu()
 
-# def make_run():
+
+
 user_name = raw_input("Enter a user name:  ")
 user_level = raw_input("Beginner (B) | Intermediate (I) | Advanced (A)\n"
-                       "*****  What is your level?  ******\n"
-                       ">>  ").lower()
+                   "*****  What is your level?  ******\n"
+                   ">>  ").lower()
 
 
 
@@ -24,7 +26,11 @@ elif user_level == "intermediate" or user_level == "i":
 elif user_level == "advanced" or user_level == "a":
     level_moves_list = get_moves_for_advanced_level()
 else:
-    print "That is not an option. Try again."
+    print "That is not an option."
+    time.sleep(2)
+    print "If you have issues choosing correctly I'll assume you're a beginner."
+    time.sleep(2)
+    level_moves_list = get_moves_for_beginner_level()
 
 
 
@@ -33,10 +39,18 @@ level_moves_names = []
 for move_option in level_moves_list:
     level_moves_names.append(move_option['name'])
 
-# takes in users obstacles
+
+
+#takes in users obstacles
 user_obsticles_list = raw_input("Create a list of obstacles, seperated by comma.\n"
                                 "Obstacles: Vault, Bar, Wall, Ground\n"
                                 ">>  ").lower().split(', ')
+
+# for item in user_obsticles_list:
+#     if item == "vault" or item == "bar" or item == "wall" or item == "ground":
+#         pass
+#     else:
+#         print "Not a valid answer!"
 
 
 generated_run = []
@@ -52,10 +66,20 @@ else:
     generated_run_output = "You have {} moves in your run\n{}".format(len(generated_run), ', '.join(generated_run))
 
 # saves users run to db
+# This needs to be moved into parkour_modules.py
+
 def save_run():
     user_save = raw_input("Would you like to save this run?  Yes or NO:  ").lower()
-    if user_save == "yes" or "y":
+    if user_save == "yes" or user_name == "y":
         runs[user_name] = {'level': user_level, 'obstacles': user_obsticles_list, 'run': generated_run, 'location': []}
+        time.sleep(3)
+        print "You're run has been saved."
+        new_run = raw_input("Would you like to make a 'New Run' run, or 'Exit'?").lower()
+        if new_run == "new run":
+            main_menu()
+        else:
+            print "Until the Next Run, Train Hard!"
+            exit()
     else:
         new_run = raw_input("Would you like to make a 'New Run' run, or 'Exit'?").lower()
         if new_run == "new run":
@@ -70,8 +94,7 @@ print "list of moves: {}".format(len(level_moves_list))
 print generated_run_output
 
 
-save_run()
 
-################### code tests ###################
+
 
 
