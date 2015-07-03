@@ -1,4 +1,4 @@
-from parkour_modules import get_level_moves_types, main_menu
+from parkour_modules import get_level_moves_types, main_menu, get_moves_for_advanced_level, get_moves_for_beginner_level, get_moves_for_intermediate_level
 from parkour_run_db import runs
 from parkour_db import catalog
 import random
@@ -16,29 +16,20 @@ user_level = raw_input("Beginner (B) | Intermediate (I) | Advanced (A)\n"
 
 
 
-# assigns number value to user_level
+# level_moves_list is a list of moves (dictionaries)
 if user_level == "beginner" or user_level == "b":
-    user_level = 1
+    level_moves_list = get_moves_for_beginner_level()
 elif user_level == "intermediate" or user_level == "i":
-    user_level = 2
+    level_moves_list = get_moves_for_intermediate_level()
 elif user_level == "advanced" or user_level == "a":
-    user_level = 3
+    level_moves_list = get_moves_for_advanced_level()
 else:
     print "That is not an option. Try again."
 
 
-# stores list of moves from chosen level
-level_moves_list = []
 
 # store list of move names from level_moves_list
 level_moves_names = []
-
-# loops through catalog to find moves based off user_level
-for move in catalog.itervalues():
-    # print "move: {}".format(move)
-    if move['level'] == user_level:
-        level_moves_list.append(move)
-
 for move_option in level_moves_list:
     level_moves_names.append(move_option['name'])
 

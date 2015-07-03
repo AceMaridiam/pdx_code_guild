@@ -5,6 +5,7 @@ __email__ = "andermation@gmail.com"
 __status__ = "Production"
 
 from parkour_run_db import runs
+from parkour_db import catalog
 import webbrowser
 
 
@@ -56,6 +57,40 @@ def save_run():
         print "{}'s run data has been stored.".format(user_name)
     else:
         main_menu()
+
+
+def get_moves_for_beginner_level():
+    user_level_one = 1
+    level_moves_list = []
+    for move in catalog.itervalues():
+        if move['level'] == user_level_one:
+            level_moves_list.append(move)
+    return level_moves_list
+
+def get_moves_for_intermediate_level():
+    user_level_one = 1
+    user_level_two = 2
+    level_moves_list = []
+    for move in catalog.itervalues():
+        if move['level'] == user_level_one:
+            level_moves_list.append(move)
+        elif move['level'] == user_level_two:
+            level_moves_list.append(move)
+    return level_moves_list
+
+def get_moves_for_advanced_level():
+    user_level_one = 1
+    user_level_two = 2
+    user_level_three = 3
+    level_moves_list = []
+    for move in catalog.itervalues():
+        if move['level'] == user_level_one:
+            level_moves_list.append(move)
+        elif move['level'] == user_level_two:
+            level_moves_list.append(move)
+        elif move['level'] == user_level_three:
+            level_moves_list.append(move)
+    return level_moves_list
 
 
 
