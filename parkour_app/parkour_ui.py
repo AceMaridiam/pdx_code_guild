@@ -66,7 +66,6 @@ else:
     generated_run_output = "You have {} moves in your run\n{}".format(len(generated_run), ', '.join(generated_run))
 
 # saves users run to db
-# This needs to be moved into parkour_modules.py
 
 def save_run():
     user_save = raw_input("Would you like to save this run?  Yes or NO:  ").lower()
@@ -92,6 +91,7 @@ def save_run():
 print "list of moves: {}".format(len(level_moves_list))
 # prints how many moves are in users list
 print generated_run_output
+save_run()
 
 
 

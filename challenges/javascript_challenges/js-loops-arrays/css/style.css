@@ -1,0 +1,39 @@
+li {
+  list-style-type: none;
+  text-align: center;
+  line-height: 3;
+  display: block;
+  background-color: lightblue;
+  border: 1px solid black;
+  margin: 2px 0;
+}
+
+a {
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+}
+
+li:hover {
+	text-decoration: none;
+	color: #000;
+}
+
+.un-active {
+	
+}
+
+.un-active::after {
+	content: "\f05d";
+	font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #000;
+    top: 10px;
+    left: 0;
+    margin-left: 5px;
+}
+
+
