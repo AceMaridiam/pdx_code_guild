@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+	<div id="myForm">
+		<!-- <form name="myForm"> -->
+			<label for="firstname">First Name</label>
+			<input type="text" name="firstname" id="firstname">
+			<br>
+			<label for="lastname">Last Name</label>
+			<input type="text" name="lastname" id="lastname">
+			<br>
+			<label for="email">Email</label>
+			<input type="text" name="email" id="email">
+			<br>
+			<label for="validate">Validate Email</label>
+			<input type="text" name="validate" id="validate">
+			<br>
+			<label for="mailing">Mailing Address</label>
+			<input type="text" name="mailing" id="mailing">
+			<br>
+			<label for="checked">If mailing address is the same as billing address</label>
+			<input type="checkbox" name="checked" id="checked">
+			<br>
+			<label for="billing">Billing Address</label>
+			<input type="text" name="billing" id="billing" required>
+			<br>
+			<br><br>
+			<button id="formSubmit" type="submit">Submit</button>
+		<!-- </form> -->
+	</div>
+
+	<div class="formOutput">
+		<p class="firstname"></p>
+		<p class="lastname"></p>
+		<p class="email"></p>
+		<p class="mailing"></p>
+		<p class="billing"></p>
+	</div>
+</div> <!-- /container -->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>

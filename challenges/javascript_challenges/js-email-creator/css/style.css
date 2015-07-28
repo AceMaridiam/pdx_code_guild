@@ -1,0 +1,14 @@
+.container {
+	width: 60%;
+	margin: 0 auto;
+}
+
+#myForm {
+	float: left;
+	background-color: lightgrey;
+	padding: 10px;
+}
+.formOutput {
+	float: left;
+	width: 50%;
+}
