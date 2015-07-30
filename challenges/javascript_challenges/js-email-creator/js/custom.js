@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+
+	// Adding current date
+	// function GetMonthName(monthNumber) {
+	//   var months = ['January', 'February', 'March', 'April', 'May', 'June',
+	//   'July', 'August', 'September', 'October', 'November', 'December'];
+	//   return months[monthNumber-1];
+	// }
+	var d = new Date();
+	var strDate =  + (d.getMonth()+1) + ", " + d.getFullYear();
+
+	$('.date').text(strDate);
+
+
 	// creates
 	$("input").focus(function() {
 		// sets variable of name of selected input
@@ -15,18 +28,35 @@ $(document).ready(function() {
 
 	});
 
+	$(function(){
+	  $.datepicker.setDefaults(
+	    $.extend( $.datepicker.regional[ '' ] )
+	  );
+	  $( '#eventDate, #consultDate' ).datepicker();
+	});
+
 	function formSubmit() {
 
 		$('#formSubmit').click(function() {
 			var firstName = $('#firstname').val();
 			var lastName = $('#lastname').val();
-			var phone = $('#email').val();
+			var eventDate = $('.event-date').val();
+			var consDate = $('.consultation-date').val();
+
+			$('.subscriber').text(firstName + " " + lastName);
+			$('.event').text("on " + eventDate);
+			$('.consultation').text(" on " + consDate);
+			// $('.subscriber').text(phone);
+			// $('.subscriber').text(firstName);
+			$('.container').addClass('hide');
+			$('.mailTemplate').removeClass('hide');
+			
 		});
 
 	}
 
-formSubmit();
 
+formSubmit();
 
 
 

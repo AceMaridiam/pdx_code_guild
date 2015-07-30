@@ -12,3 +12,7 @@
 	float: left;
 	width: 50%;
 }
+
+.hide {
+	display: none;
+}

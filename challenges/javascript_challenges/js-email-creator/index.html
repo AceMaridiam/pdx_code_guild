@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Custom Form</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -22,7 +23,13 @@
 			<label for="validate">Validate Email</label>
 			<input type="text" name="validate" id="validate">
 			<br>
-			<label for="mailing">Mailing Address</label>
+			<label for="event-date">Event Date</label>
+			<input type="text" name="event-date" id="eventDate" class="event-date">
+			<br>
+			<label for="consultation-date">Consultation Date</label>
+			<input type="text" name="validate" id="consultDate" class="consultation-date">
+			<br>
+			<!-- <label for="mailing">Mailing Address</label>
 			<input type="text" name="mailing" id="mailing">
 			<br>
 			<label for="checked">If mailing address is the same as billing address</label>
@@ -30,7 +37,7 @@
 			<br>
 			<label for="billing">Billing Address</label>
 			<input type="text" name="billing" id="billing" required>
-			<br>
+			<br> -->
 			<br><br>
 			<button id="formSubmit" type="submit">Submit</button>
 		<!-- </form> -->
@@ -44,8 +51,68 @@
 		<p class="billing"></p>
 	</div>
 </div> <!-- /container -->
+
+<div class="mailTemplate hide" style="margin: 0; padding: 0;">
+ <table border="1" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="center" style="padding: 40px 0 30px 0" bgcolor="lightgrey">
+    <img src="images/logo.png" alt="logo" width="283.5" height="292" style="display: block;">
+    </td>
+   </tr>
+   <tr>
+    <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+     <table border="1" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td>
+        <p>Hello <span class="subscriber">/span>, thank you for contacting Hardcore Florist!</p>
+       </td>
+      </tr>
+      <tr>
+       <td style="padding: 20px 0 30px 0;">
+        You're getting married <span class="event"></span>.  Congratulations!
+				You've chosen to meet with me<span class="consultation"></span>.
+       </td>
+      </tr>
+      <tr>
+       <td>
+        <table border="1" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td width="260" valign="top">
+           Column 1
+          </td>
+          <td style="font-size: 0; line-height: 0;" width="20">
+           &nbsp;
+          </td>
+          <td width="260" valign="top">
+           Column 2
+          </td>
+         </tr>
+        </table>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+   <tr>
+    <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
+     <table border="1" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+       <td>
+        &reg; Hardcore Florist, <span class="date"></span>
+       </td>
+       <td>
+        Column 2
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+ </table>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+ <script type="text/javascript" src="js/custom.js"></script>
+</div> <!-- / mailTemplate -->
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
