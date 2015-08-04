@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Custom Form</title>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/spectrum.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -11,33 +12,31 @@
 <div class="container">
 	<div id="myForm">
 		<!-- <form name="myForm"> -->
-			<label for="firstname">First Name</label>
-			<input type="text" name="firstname" id="firstname">
+			<input type="text" name="firstname" id="firstname" placeholder="First Name">
 			<br>
-			<label for="lastname">Last Name</label>
-			<input type="text" name="lastname" id="lastname">
+			<input type="text" name="lastname" id="lastname" placeholder="Last Name">
 			<br>
-			<label for="email">Email</label>
-			<input type="text" name="email" id="email">
+			
+			<input type="text" name="email" id="email" placeholder="Email">
 			<br>
-			<label for="validate">Validate Email</label>
-			<input type="text" name="validate" id="validate">
+			
+			<input type="text" name="validate" id="validate" placeholder="Validate Email">
 			<br>
-			<label for="event-date">Event Date</label>
-			<input type="text" name="event-date" id="eventDate" class="event-date">
+			
+			<input type="text" name="event-date" id="eventDate" class="event-date" placeholder="Event Date">
 			<br>
-			<label for="consultation-date">Consultation Date</label>
-			<input type="text" name="validate" id="consultDate" class="consultation-date">
+			
+			<input type="text" name="consultation-date" id="consultDate" class="consultation-date" placeholder="Consultation Date">
 			<br>
-			<!-- <label for="mailing">Mailing Address</label>
-			<input type="text" name="mailing" id="mailing">
-			<br>
-			<label for="checked">If mailing address is the same as billing address</label>
-			<input type="checkbox" name="checked" id="checked">
-			<br>
-			<label for="billing">Billing Address</label>
-			<input type="text" name="billing" id="billing" required>
-			<br> -->
+			<div class="color-palette">
+				<p>Choose your colors palette below.</p>
+				<input type='text' id="color1" />
+				<input type='text' id="color2" />
+				<input type='text' id="color3" />
+				<!-- <input type='text' id="color4" />
+				<input type='text' id="color5" /> -->
+				<p><a href="#" class="newWindow">Or create a color palette from a picture</a><br>Make sure to copy the color values created into the color pickers.</p>
+			</div>
 			<br><br>
 			<button id="formSubmit" type="submit">Submit</button>
 		<!-- </form> -->
@@ -47,44 +46,56 @@
 		<p class="firstname"></p>
 		<p class="lastname"></p>
 		<p class="email"></p>
-		<p class="mailing"></p>
-		<p class="billing"></p>
+		<p class="event-date"></p>
+		<p class="consultation-date"></p>
 	</div>
 </div> <!-- /container -->
 
 <div class="mailTemplate hide" style="margin: 0; padding: 0;">
- <table border="1" cellpadding="0" cellspacing="0" width="100%">
-  <tr>
-    <td align="center" style="padding: 40px 0 30px 0" bgcolor="lightgrey">
-    <img src="images/logo.png" alt="logo" width="283.5" height="292" style="display: block;">
-    </td>
-   </tr>
+ <table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <td>
+  	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  	  <td>
+  	   <table border="0" cellpadding="0" cellspacing="0">
+  	     <tr>
+  	      <a href="http://hardcoreflorist.com">
+  	      <td style="padding:20px 0;" align="center">
+  	       <img src="images/logo.png" alt="logo" width="50%" style="display: inline; padding: 30px">
+  	      </td>
+  	      </a>
+  	      <td class="firstColor" bgcolor="lightblue" width="75%" style="padding: 40px;">
+  	       This is where a title will go.
+  	      </td>
+  	     </tr>
+  	    </table>
+  	  </td>
+  	 </tr>
+  	</table>
+   </td>
    <tr>
-    <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
-     <table border="1" cellpadding="0" cellspacing="0" width="100%">
+    <td class="secondColor" bgcolor="lightgreen" style="padding: 40px 30px 40px 30px;">
+     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
        <td>
-        <p>Hello <span class="subscriber">/span>, thank you for contacting Hardcore Florist!</p>
+        <p>Hello<span class="subscriber">/span>, thank you for contacting Hardcore Florist!</p>
        </td>
       </tr>
       <tr>
        <td style="padding: 20px 0 30px 0;">
-        You're getting married <span class="event"></span>.  Congratulations!
+        You're getting married<span class="event"></span>.  Congratulations!<br>
 				You've chosen to meet with me<span class="consultation"></span>.
        </td>
       </tr>
       <tr>
        <td>
-        <table border="1" cellpadding="0" cellspacing="0" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
          <tr>
-          <td width="260" valign="top">
-           Column 1
+          <td width="260" valign="top" align="center">
+           <img src="http://www.hardcoreflorist.com/wp-content/uploads/meridethandberry_1.jpg" width="500" style="vertical-align:bottom; max-width:100%;">
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae felis et eros iaculis scelerisque. Donec posuere, nisl at elementum elementum, libero urna pretium dolor, non fermentum dolor sapien et ante. Nullam a leo at ligula condimentum tempor. Vivamus eu accumsan justo, ut dictum risus. Nam sed justo auctor, hendrerit neque et, venenatis risus. Vestibulum feugiat tempor augue, molestie ornare quam varius sit amet. Suspendisse dignissim tincidunt hendrerit. Quisque eu efficitur ante, nec tristique sapien. Maecenas in luctus odio. Donec varius aliquet dolor, ut dapibus est euismod a. In enim arcu, faucibus ac interdum non, consectetur eu diam. Donec vel tincidunt mi. Phasellus id lacus id odio luctus tempor. Suspendisse ullamcorper at enim sollicitudin ultrices. Etiam neque eros, aliquet rhoncus sem auctor, maximus semper lectus.</p>
           </td>
-          <td style="font-size: 0; line-height: 0;" width="20">
-           &nbsp;
-          </td>
-          <td width="260" valign="top">
-           Column 2
+          <td width="260" valign="top" align="center">
+           <img src="http://www.hardcoreflorist.com/wp-content/uploads/B+M-132.jpg" width="500" style="vertical-align:bottom; max-width:100%;">
           </td>
          </tr>
         </table>
@@ -94,14 +105,32 @@
     </td>
    </tr>
    <tr>
-    <td bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
-     <table border="1" cellpadding="0" cellspacing="0" width="100%">
+    <td class="thirdColor" bgcolor="#ee4c50" style="padding: 30px 30px 30px 30px;">
+     <table border="0" cellpadding="0" cellspacing="0" width="100%">
       <tr>
        <td>
         &reg; Hardcore Florist, <span class="date"></span>
        </td>
        <td>
-        Column 2
+        <table border="0" cellpadding="0" cellspacing="0" align="right">
+          <tr>
+           <td>
+            <a href="http://www.facebook.com/hardcoreflorist">
+             <img src="images/facebook.png" alt="Twitter" width="38" height="38" style="display: block; padding: 10px" border="0" />
+            </a>
+           </td>
+           <td>
+            <a href="http://www.twitter.com/">
+             <img src="images/twitter.png" alt="Facebook" width="38" height="38" style="display: block; padding: 10px" border="0" />
+            </a>
+           </td>
+           <td>
+            <a href="http://www.instagram.com/hardcoreflorist">
+             <img src="images/instagram.png" alt="Facebook" width="38" height="38" style="display: block; padding: 10px" border="0" />
+            </a>
+           </td>
+          </tr>
+         </table>
        </td>
       </tr>
      </table>
@@ -111,6 +140,7 @@
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+ <script type="text/javascript" src="js/spectrum.js"></script>
  <script type="text/javascript" src="js/custom.js"></script>
 </div> <!-- / mailTemplate -->
 	
